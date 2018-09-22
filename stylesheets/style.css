@@ -115,7 +115,7 @@ body.scale-effect .btn-holder .btn-play{transform:scale(28);-webkit-transform:sc
 #home #menuToggle{position:absolute;top:20px;right:-65px;z-index:11;display:block;text-align:center;font-size:14px;width:40px;height:40px;line-height:40px;cursor:pointer;border:1px solid rgba(93, 92, 92, 0.52);background:rgba(0, 0, 0, 0.06);transition:all .5s ease-in-out;}
 #home #menuToggle:hover{background:rgba(0, 0, 0, 0.3);transition:all .5s ease-in-out;}
 #home #menuToggle .toggle-normal{font-size:31px;}
-#home #menuToggle .toggle-normal i{font-size:31px;padding:4px;color:#1976D2;}
+#home #menuToggle .toggle-normal i{font-size:31px;padding:4px;color:#06a763;}
 #home #menuToggle .toggle-normal .top-bar{position:absolute;right:0;top:-6px;transition:.8s;}
 #home #menuToggle .toggle-normal .middle-bar{position:absolute;right:0;top:0;opacity:1;transition:.8s;}
 #home #menuToggle .toggle-normal .bottom-bar{position:absolute;right:0;top:6px;-webkit-transform:rotate(0deg);transform:rotate(0deg);transition:.8s;}
