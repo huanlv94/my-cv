@@ -1,0 +1,17 @@
+stages:
+- name: build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: registry.gitlab.com/huanle94/my-cv
+      pushRemote: true
+      registry: registry.gitlab.com
+    when:
+      event:
+        include:
+        - push
+        exclude:
+        - tag
+timeout: 60
+notification: {}
