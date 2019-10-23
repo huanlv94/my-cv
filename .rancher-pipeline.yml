@@ -10,22 +10,31 @@ stages:
     when:
       branch:
         include:
+        - develop
         - master
   when:
     branch:
       include:
-      - master
-- name: deploy
+      - develop
+- name: deployDev
   steps:
   - applyYamlConfig:
-      path: ./deployment.yaml
+      path: ./deploy/develop.yaml
+    when:
+      branch:
+        include:
+        - develop
+  when:
+    branch:
+      include:
+      - master
+- name: deployProd
+  steps:
+  - applyYamlConfig:
+      path: ./deploy/production.yaml
     when:
       branch:
         include:
         - master
-  when:
-    branch:
-      include:
-      - master
 timeout: 60
 notification: {}
