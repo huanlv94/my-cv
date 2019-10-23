@@ -1,0 +1,36 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mycv-develop-service
+spec:
+  selector:
+    app: mycv-develop
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mycv-develop
+  labels:
+    app: mycv-develop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mycv-develop
+  template:
+    metadata:
+      labels:
+        app: mycv-develop
+    spec:
+      imagePullSecrets:
+      - name: pipeline-docker-registry
+      containers:
+      - name: mycv-develop
+        image: ${CICD_IMAGE}:${CICD_GIT_COMMIT}
+        ports:
+        - containerPort: 80
