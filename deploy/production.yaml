@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: mycv-production-service
+  namespace: huan-apps
 spec:
   selector:
     app: mycv-production
