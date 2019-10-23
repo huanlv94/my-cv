@@ -16,6 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mycv-develop
+  namespace: huan-apps
   labels:
     app: mycv-develop
 spec:
