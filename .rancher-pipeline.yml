@@ -1,0 +1,31 @@
+stages:
+- name: build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: registry.gitlab.com/huanle94/my-cv/master:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: registry.gitlab.com
+    when:
+      branch:
+        include:
+        - master
+  when:
+    branch:
+      include:
+      - master
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+    when:
+      branch:
+        include:
+        - master
+  when:
+    branch:
+      include:
+      - master
+timeout: 60
+notification: {}
