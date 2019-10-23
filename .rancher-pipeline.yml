@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: registry.gitlab.com/huanle94/my-cv/master:${CICD_EXECUTION_SEQUENCE}
+      tag: registry.gitlab.com/huanle94/my-cv/${CICD_GIT_REPO_NAME}:${CICD_GIT_COMMIT}
       pushRemote: true
       registry: registry.gitlab.com
     when:
