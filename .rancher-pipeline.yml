@@ -10,8 +10,8 @@ stages:
     when:
       branch:
         include:
-        - develop
         - master
+        - develop
   when:
     branch:
       include:
