@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:1.18.0
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
@@ -12,4 +12,4 @@ VOLUME ["/var/cache/nginx"]
 
 EXPOSE 80 443
 
-CMD ["sudo nginx -g 'daemon off;'" ]
+CMD nginx -g 'daemon off;'
