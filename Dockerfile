@@ -6,4 +6,10 @@ RUN mkdir -p /var/www/about.levanhuan.com
 
 COPY . /var/www/about.levanhuan.com
 
-EXPOSE 80
+WORKDIR /var/www/about.levanhuan.com
+
+VOLUME ["/var/cache/nginx"]
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]
