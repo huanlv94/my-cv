@@ -2,14 +2,14 @@ FROM nginx:alpine
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-RUN mkdir -p /var/www/about.levanhuan.com
+RUN mkdir -p /var/www/cv.huanlv
 
-COPY . /var/www/about.levanhuan.com
+COPY . /var/www/cv.huanlv
 
-WORKDIR /var/www/about.levanhuan.com
+WORKDIR /var/www/cv.huanlv
 
 VOLUME ["/var/cache/nginx"]
 
 EXPOSE 80 443
 
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
