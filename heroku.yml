@@ -2,5 +2,5 @@ build:
   docker:
     web: Dockerfile
 
-run:
-  web: service nginx -g "daemon off;"
+# run:
+#   web: service nginx -g "daemon off;"
