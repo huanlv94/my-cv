@@ -1,6 +1,7 @@
 FROM nginx:1.18.0
 
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf.erb /etc/nginx/conf.d/default.conf
+COPY default.conf.erb /etc/nginx/conf.d/nginx.conf.erb
 
 RUN mkdir -p /var/www/cv.huanlv
 
